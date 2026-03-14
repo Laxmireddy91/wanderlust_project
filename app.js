@@ -45,11 +45,13 @@ const sessionOptions = {
   cookie:{
   expires: Date.now() + 1000*60*60*24*7,
   maxAge: 7*24*60*60*1000,
-  httpOnly: true,
-  secure: true,
-  sameSite: "none"
+
 }
 };
+if(process.env.NODE_ENV === "production"){
+  app.set("trust proxy", 1);
+  sessionOptions.cookie.secure = true;
+}
 
 
 async function main() {
@@ -71,14 +73,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname,"/public")));
 app.use(express.json());
-app.set("trust proxy", 1);
-
-
-
-// app.get("/", (req, res) => {
-//   res.send("Hi, I am root");
-// });
-
 
 app.use(session(sessionOptions));
 app.use(flash());
