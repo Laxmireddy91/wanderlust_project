@@ -1,0 +1,128 @@
+<% layout('layouts/boilerplate')%>
+
+<div>
+   <!-- Filters (Hidden on small screens) -->
+   <div id="filters" class="filters-wrapper d-none d-md-flex">
+   
+      <a href="#"
+         data-category=""
+         class="filter <%= !selectedCategory ? 'active' : '' %>">
+         <i class="fa-solid fa-border-all"></i>
+         <p>All</p>
+      </a>
+
+      <a href="#" 
+         data-category="trending"
+         class="filter <%= selectedCategory === 'trending' ? 'active' : '' %>">
+         <i class="fa-solid fa-fire"></i>
+         <p>Trending</p>
+      </a>
+
+      <a href="#"
+         data-category="rooms"
+         class="filter <%= selectedCategory === 'rooms' ? 'active' : '' %>">
+         <i class="fa-solid fa-bed"></i>
+         <p>Rooms</p>
+      </a>
+
+      <a href="#" 
+         data-category="iconic cities"         
+         class="filter <%= selectedCategory === 'iconic cities' ? 'active' : '' %>">
+         <i class="fa-solid fa-mountain-city"></i>
+         <p>Iconic Cities</p>
+      </a>
+
+      <a href="#" 
+         data-category="mountains"
+         class="filter <%= selectedCategory === 'mountains' ? 'active' : '' %>">
+         <i class="fa-solid fa-mountain"></i>
+         <p>Mountains</p>
+      </a>
+
+      <a href="#"
+         data-category="castles" 
+         class="filter <%= selectedCategory === 'castles' ? 'active' : '' %>">
+         <i class="fa-brands fa-fort-awesome"></i>
+         <p>Castles</p>
+      </a>
+
+      <a href="#"
+         data-category="amazing pools" 
+         class="filter <%= selectedCategory === 'amazing pools' ? 'active' : '' %>">
+         <i class="fa-solid fa-person-swimming"></i>
+         <p>Amazing Pools</p>
+      </a>
+
+      <a href="#"
+         data-category="camping" 
+         class="filter <%= selectedCategory === 'camping' ? 'active' : '' %>">
+         <i class="fa-solid fa-campground"></i>
+         <p>Camping</p>
+      </a>
+
+      <a href="#"
+         data-category="farms" 
+         class="filter <%= selectedCategory === 'farms' ? 'active' : '' %>">
+         <i class="fa-solid fa-cow"></i>
+         <p>Farms</p>
+      </a>
+
+      <a href="#"
+         data-category="arctic" 
+         class="filter <%= selectedCategory === 'arctic' ? 'active' : '' %>">
+         <i class="fa-solid fa-snowflake"></i>
+         <p>Arctic</p>
+      </a>
+
+      <a href="#"
+         data-category="domes" 
+         class="filter <%= selectedCategory === 'domes' ? 'active' : '' %>">
+          <i class="fa-solid fa-igloo" style="color: black;"></i>         
+          <p>Domes</p>
+      </a>
+
+
+      <!-- Tax Toggle -->
+   <div class="tax-toggle mt-3">
+      <div class="form-check form-switch">
+         <input class="form-check-input" type="checkbox" id="switchCheckDefault">
+         <label class="form-check-label" for="switchCheckDefault">
+            Display total after taxes
+         </label>
+      </div>
+   </div>
+   
+   
+   </div>
+
+
+
+   <!-- Listings Grid -->
+   <div id="listing-container" class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-4">
+      <% for(let listing of allListings){ %>
+         <a href="/listings/<%= listing._id %>" class="listing-link">
+            <div class="card col listing-card">
+               <img src="<%= listing.image.url %>" 
+                    class="card-img-top listing-img" 
+                    alt="listing_image" 
+                    style="height: 20rem"
+               />
+
+               <div class="card-img-overlay"></div>
+
+               <div class="card-body">
+                  <h5 class="card-title"><%= listing.title %></h5>
+                  <p class="card-price">
+        ₹ <%= listing.price %> / night</p>
+<p class="tax-info" style="display:none; font-size:14px; color:gray;">
+  +18% GST</p>
+                 
+               </div>
+            </div>  
+         </a>
+      <% } %>
+   </div>
+
+</div>
+
+<script src="/js/script.js"></script>

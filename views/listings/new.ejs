@@ -1,0 +1,83 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <div class="col-8 offset-2">
+    <br><br>
+    <h1>Create a New Listing</h1>
+    <form action="/listings" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+         <label for="title" class="form-label">Title:</label>
+        <input id="title" type="text" name="listing[title]" class="form-control" required>
+       <div class="valid-feedback">Looks good!</div>
+       <div class="invalid-feedback">Enter a valid title</div>
+       
+    </div>
+
+   
+    <div class="mb-3">
+        <label for="description">Description:</label>
+        <textarea 
+        id="description" 
+        name="listing[description]" 
+        class="form-control"
+        required></textarea>
+        <div class="invalid-feedback">Please provide a description.</div>
+    </div>
+       
+        
+    <!--<div class="mb-3">
+            <label for="image" class="form-label">Image link</label>
+            <input type="text" placeholder="Enter image URL/Link" name="listing[image]" class="form-control">
+            <div class="invalid-feedback">Please provide an image URL.</div>
+    
+    </div>  -->
+
+    <!--this can't be accessed so it is parsed using the multer i.e acquired in listing.js routes-->
+    <div class="mb-3">
+            <label for="image" class="form-label">Upload Listing Image</label>
+            <input type="file" id="image" name="listing[image]" class="form-control" accept="image/*" required>
+            <div class="invalid-feedback">Please provide an image URL.</div>
+    
+    </div>
+      
+    <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <select name="listing[category]" class="form-select" required>
+    <option value="">Select Category</option>
+    <option value="trending">Trending</option>
+    <option value="rooms">Rooms</option>
+    <option value="iconic cities">Iconic Cities</option>
+    <option value="mountains">Mountains</option>
+    <option value="castles">Castles</option>
+    <option value="amazing pools">Amazing Pools</option>
+    <option value="camping">Camping</option>
+    <option value="farms">Farms</option>
+    <option value="arctic">Arctic</option>
+    </select>
+    </div>
+
+
+    <div class="mb-3">
+            <label for="location" class="form-label">Location:</label>
+         <input id="location" type="text" placeholder="Jaipur, Rajasthan"
+          name="listing[location]" class="form-control" required>
+           <div class="invalid-feedback">Please provide a location.</div>
+    </div>
+<div class="row">
+    <div class="mb-3 col-md-4">
+ <label for="price" class="form-label">Price:</label>
+<input id="price" type="number" min="0" placeholder="1200" name="listing[price]" class="form-control" required>
+        <div class="invalid-feedback">Please provide a price.</div>
+    </div>
+<div class="mb-3 col-md-8">
+        <label for="country" class="form-label">Country:</label>
+        <input id="country" type="text" placeholder="India" name="listing[country]" class="form-control" required>
+        <div class="invalid-feedback">Please provide a country.</div>
+    </div>
+</div>
+
+<br><br>
+
+<button type="submit" class="btn btn-dark add-btn">Add</button>
+</form>
+</div>
+</div>

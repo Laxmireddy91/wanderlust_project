@@ -1,0 +1,258 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+}
+
+
+.container{
+    flex: 1;
+}
+.navbar{
+  height: 5rem;
+  background-color: white;
+}
+
+.fa-compass{
+    color:rgb(111, 118, 146);
+    font-size: 2rem;
+
+}
+
+.navlink{
+    color: #222222 !important;
+}
+
+.listing-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.listing-price{
+    font-size: 0.95rem;
+    font-weight:500;
+    color:#555;
+}
+.f-info-links a{
+    text-decoration: none;
+    color:#222222;
+    gap: 40px;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+
+.f-info-links, .f-info-socials, .f-info-brand{
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+        justify-content: center;
+
+}
+
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-right:1rem;
+}
+
+.f-info{
+    text-align: center;
+    display:flex;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+
+    
+}
+.listing-img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.listing-card{
+    border-radius: 15px !important;
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+
+}
+.card-title {
+    min-height: 20px;
+    padding-top: 0%;
+    margin-bottom: 0%;
+
+}
+
+.card-body{
+    padding:0 12px 0 12px !important;
+}
+
+
+.card-text{
+    font-weight: 400;
+}
+
+.listing-link{
+  text-decoration: none;
+}
+
+/** card effect **/
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+.del-btn{
+    background-color: black;
+    border: none;
+}
+
+.add-btn,.edit-btn{
+    background-color: red !important;
+    border: none !important;
+}
+
+.btn:hover{
+    background-color: grey !important;
+}
+
+
+/*show page*/
+.show-img{
+    height: 30vh;
+}
+
+.btns{
+    display: flex;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.btn-submit:hover{
+    background-color: grey !important;
+}
+
+   #filters{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+   }
+
+   .filter{
+      margin-top: 2rem;
+      text-align: center;
+      opacity: 0.7;
+      text-decoration: none;
+      color: inherit;
+   }
+
+   #filters::-webkit-scrollbar {
+      display: none; /* Chrome */
+   }
+
+   .filter-wrapper{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-top: 1.5rem;
+   }
+
+   .filter:hover{
+      opacity: 1;
+      cursor: pointer;
+   }
+
+   .filter p{
+      font-size: 0.8rem;
+      margin: 0;
+   }
+
+   .filter.active{
+      opacity: 1;
+      border-bottom: 2px solid black;
+   }
+
+   .filter.active {
+        opacity: 1;
+        font-weight: bold;
+        border-bottom: 2px solid black;
+   }
+
+   .tax-info{
+     display: none;
+   }
+
+   .tax-toggle{
+      border: 1px solid black;
+      border-radius: 1rem;
+      height: 3.25rem;
+      padding: 1rem;
+      margin-left: 2rem;
+      display: flex;
+      align-items: center;
+   }
+
+.card-price{
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.tax-info{
+  font-size: 14px;
+  color: #6c757d;
+}
+.tax-toggle{
+  margin-left: auto;
+}
+
+/* Search bar styling */
+
+.search-btn{
+    background-color: red;
+    color: white;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    opacity: 0.7;
+}
+
+.search-btn:hover{
+    opacity: 1;
+    color: white;
+}
+
+.search-btn i{
+    display: inline !important;
+    margin-right: 0.5rem;
+}
+
+.search-inp{
+    border-radius: 25px;
+    padding: 0.5rem 3rem;
+    font-size: 0.9rem;
+    width: 250px;
+}
