@@ -37,23 +37,24 @@ store.on("error",(err) => {
   console.log("ERROR IN MONGO SESSION STORE",err);
 });
 
+if(process.env.NODE_ENV === "production"){
+  app.set("trust proxy", 1);
+}
+
 const sessionOptions = {
   store,
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false,
-  proxy: true,   // ⭐ ADD THIS
-  cookie: {
+  cookie:{
     httpOnly: true,
-    maxAge: 7 * 24 * 60 * 60 * 1000,
-    sameSite: "lax"
+    maxAge: 7 * 24 * 60 * 60 * 1000
   }
 };
+
 if(process.env.NODE_ENV === "production"){
-  app.set("trust proxy", 1);
   sessionOptions.cookie.secure = true;
 }
-
 
 async function main() {
   await mongoose.connect(dburl);
