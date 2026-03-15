@@ -50,7 +50,6 @@ const sessionOptions = {
 
 if (process.env.NODE_ENV === "production") {
   app.set("trust proxy", 1);
-  sessionOptions.cookie.secure = true;
 }
 async function main() {
   await mongoose.connect(dburl);
