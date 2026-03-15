@@ -42,10 +42,9 @@ const sessionOptions = {
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false,
-  proxy: true,      // ⭐ IMPORTANT
   cookie: {
     httpOnly: true,
-    maxAge: 7 * 24 * 60 * 60 * 1000
+    maxAge: 1000 * 60 * 60 * 24 * 7
   }
 };
 
