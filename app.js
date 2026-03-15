@@ -42,6 +42,7 @@ const sessionOptions = {
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
+ name: "connect.sid",
   cookie: {
     httpOnly: true,
     maxAge: 1000 * 60 * 60 * 24 * 7
